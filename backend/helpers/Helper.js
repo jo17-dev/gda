@@ -89,8 +89,8 @@ class Helper {
      * @returns {boolean}
      */
         static is_in_the_base(number, targetBase){
-            let result = (targetBase==16 && this.isRealNumber(number)) ? true : false;
-            if(targetBase < 16 && this.isRealNumber(number)){
+            let result = true;
+            if(targetBase < 16){
                 let baseItems = ["."]; // all the items who suppose to be in the target base
                 for(let i=0; i<targetBase; i++){
                     baseItems.push(i.toString());
@@ -99,6 +99,14 @@ class Helper {
                 for(let i=0;i<number.length; i++){
                     if(!baseItems.includes(number[i])){
                         result = false;
+                    }
+                }
+            }
+            if(targetBase == 16){ // base 16 management 
+                for(let i=0; i<number.length; i++){
+                    if(!this.isRealNumber(number[i])){
+                        result = false;
+                        break;
                     }
                 }
             }

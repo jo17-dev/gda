@@ -1,47 +1,86 @@
-// This class will contains all the methods to perform operations in decimal base
-class Operation{
-    // addition
-    static addition(datas){ // datas is an arrays of datas
-        let result = 0.0;
-        console.log("datas length: ", datas.length)
-        for(let i=0; i<datas.length; i++){
-            result += parseFloat(datas[i]);
-        }
-        console.log("result after addition: ", result);
-        return result;
-    }
-    // soustraction
-    static soustraction(datas){
-        let result = parseFloat(datas[0]) || 0;
-        for(let i=1; i<datas.length; i++){
-            result -= parseFloat(datas[i]);
-        }
-        console.log("result after soustraction: ", result);
-        return result;
-    }
-    // multiplication
-    static mutiplication(datas){ // datas is an arrays of datas
-        let result = 1.0;
-        for(let i=0; i<datas.length; i++){
-            result *= parseFloat(datas[i]);
-        }
-        console.log("result after multiplication: ", result);
-        return result;
-    }
-    // division
-    static division(datas){ // datas is an arrays of datas
-        let result = parseFloat(datas[0]) || 1;
-        for(let i=1; i<datas.length; i++){
-            if(parseFloat(datas[i]) != 0){
-                result /= parseFloat(datas[i]);
-            }else{
-                return ;
-            }
-        }
-        console.log("result after addition: ", result);
-        return result;
+const router = require('express').Router();
+const { Convert } = require('../assets/conversion.asset');
+const {Operation} = require('../assets/operation.asset');
+const { Helper } = require('../helpers/Helper');
+require('../assets/conversion.asset');
+
+let nberReq = 0;
+
+const chekingMiddleware = (req, res, next)=>{
+    console.log("request body: > ", req.body);
+    if(!Boolean(req.body.operation && req.body.startBase && req.body.endBase && req.body.datas)){
+        res.json(
+            {message: "not accepted"}
+        )
+        // res.sendStatus(503);
+    }else{
+        next();
     }
 }
 
+const mainJob = (req, res)=>{
+    let result, convertedDatas;
+    let operation = parseInt(req.body.operation);
+    let areNumbersCorrect = true;
 
-module.exports.Operation = Operation;
+    // firstly check the numbers:
+    let numbers = req.body.datas.split(';');
+    for(let i=0; i<numbers.length; i++){
+        if(!Helper.isRealNumber(numbers[i])){
+            areNumbersCorrect = false;
+            break;
+        }
+        if(! Helper.is_in_the_base(numbers[i], parseInt(req.body.startBase))){
+            console.log("les bases ne corespoondent ")
+            areNumbersCorrect = false;
+            break;
+        }
+    }
+    // secondly convert to the decimal base
+    if(req.body.startBase != 10 ){
+        convertedDatas = Convert.allToDec(numbers, parseInt(req.body.startBase));
+        console.log("result after conversion: ", convertedDatas);
+    }else{
+
+        convertedDatas = numbers;
+    }
+    switch (operation){
+        case 1: // addition
+            result = areNumbersCorrect ? Operation.addition(convertedDatas) : null ;
+            break;
+        case 2: // Soustraction
+            result = areNumbersCorrect ? Operation.soustraction(convertedDatas) : null;
+            break;
+        case 3: // Multiplication
+            result = areNumbersCorrect ? Operation.mutiplication(convertedDatas) : null;
+            break;
+        case 4: // Division
+            result = areNumbersCorrect ? Operation.division(convertedDatas) : null;
+            break;
+        case 6:
+            console.log("Conversion");
+            if(req.body.startBase == req.body.endBase){
+                result = req.body.datas;
+            }else{
+                result= req.body.startBase != "10" ? 
+                Convert.allToDec(req.body.datas.split(';') , parseInt(req.body.startBase))
+                :
+                Convert.decToAll(req.body.datas.split(';') , parseInt(req.body.endBase));
+            }
+            break;
+        default:
+            result = null;
+
+    }
+
+    res.json(
+        {
+            operation: req.body.operation,
+            resultat: result
+        }
+    );
+}
+
+module.exports.mainJob = mainJob;
+module.exports.chekingMiddleware = chekingMiddleware;
+// module.exports = router;

@@ -4,7 +4,6 @@ const app =  express();
 const port = 500;
 
 app.use(express.urlencoded({ extended: true }));
-// app.use(express)
 
 app.use( (req, res, next)=>{
     res.setHeader('Access-Control-Allow-Origin', '*'); // à modifier par un truc
