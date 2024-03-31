@@ -2,14 +2,8 @@
 class Helper {
     /** 
     * This function take a number and verify if he is in the right base
-    * @params {nber: String, targetBase:int}
-    * @returns boolean
-     */
-        /**
-     * 
-     * @param {Array<String>} datas 
-     * @param {int} startBase 
-     * @param {int} endBase 
+     * @param {String} number 
+     * @param {int} targetBase  
      * @returns {boolean}
      */
     static is_in_the_base(number, targetBase){
@@ -28,8 +22,7 @@ class Helper {
             for(let i=0; i<nberParts.length; i++){ // for integer and fractionnal part...
                 nberParts[i].split("").forEach(digit => {
                     let current = parseInt(digit);
-                    console.log(current)
-                    if(current == NaN || current >= targetBase){
+                    if(current >= targetBase){
                         result = false;
                     }
                 });
@@ -39,11 +32,11 @@ class Helper {
         return result;
     }
     /**
-     * 
+     * Take and hex and return his equivalent in decemal base
      * @param {Array<String>} datas 
      * @returns {Arrays<String>}
      */
-    static mappingHex(letter){
+    static mappingFromHex(letter){
         let result=letter ;
         switch (letter){
             case "A":
@@ -70,10 +63,41 @@ class Helper {
         }
         return result;
     }
-
-
     /**
      * 
+     * @param {int} number 
+     * @returns {String}
+     */
+    static mappingHexFromDec(number){
+        let result= number;
+        switch (number){
+            case 10:
+                result = "A";
+                break;
+            case 11:
+                result = "B";
+                break;
+            case 12:
+                result = "C";
+                break;
+            case 13:
+                result = "D";
+                break;
+            case 14:
+                result = "E";
+                break;
+            case 15:
+                result = "F";
+                break;
+            default :
+                result = number;
+                break;
+        }
+        return result;
+    }
+
+    /**
+     * a real number has at most one "."
      * @param {string} number 
      */
 
@@ -81,7 +105,12 @@ class Helper {
         return number.match("^\d+(\.\d+)?$") ? true : false;
     }
 
-
+    /**
+     * 
+     * @param {String} sample 
+     * @param {String} target 
+     * @returns {int}
+     */
     static lengthAfter(sample, target){
         let sampleTable = sample.split(target);
         return sampleTable[1].length;

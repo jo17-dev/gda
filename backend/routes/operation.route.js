@@ -45,7 +45,10 @@ router.post('/', (req, res)=>{
             break;
         case 6:
             console.log("Conversion");
-            result= Convert.allToDec(req.body.datas.split(';') , parseInt(req.body.startBase), parseInt(req.body.endBase));
+            result= req.body.startBase != "10" ? 
+                Convert.allToDec(req.body.datas.split(';') , parseInt(req.body.startBase))
+                :
+                Convert.decToAll(req.body.datas.split(';') , parseInt(req.body.endBase));
             break;
         default:
             // res.sendStatus(503);
