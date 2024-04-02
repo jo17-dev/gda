@@ -1,0 +1,18 @@
+.waves-container{
+    z-index: -4;
+    width: 99.9%;
+    /* height: 480px; */
+    height: 75vh;
+    background-image: url("./assets/img/waves3.jpg");
+    background-size: cover;
+}
+
+.gitLogo{
+    width: 30px;
+    height: 30px;
+}
+
+.lucky{
+    background: rgba(255, 255, 255, 0.425);
+    backdrop-filter: blur(10px);
+}
