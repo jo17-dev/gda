@@ -4,14 +4,15 @@ import { Typography, Box } from "@mui/material";
  * 
  * @param props.content
  * @param {string} props.hyphenSize
- * @param {string} props.hyphenColor 
- * @returns Title
+ * @param {string} props.hyphenColor
+ * @param {string || int} props.marginTop
+ * @returns {}
  */
 const Title = (props:any)=>{
     return(
-        <Box display="flex" flexDirection="row" alignItems="center" justifyContent="space-evenly" paddingLeft={5}>
+        <Box display="flex" flexDirection="row" alignItems="center" justifyContent="space-evenly" paddingLeft={5} marginTop={props.marginTop || "0"}>
             <Typography variant="h5" fontWeight="bolder" color={props.contentColor || undefined } > {props.content} </Typography>
-            <Typography height={props.hyphenSize+"px" || "4px"} width="80%" bgcolor={props.hyphenColor || "black"} ></Typography>
+            <Typography height={props.hyphenSize+"px" || "4px"} width="79%" bgcolor={props.hyphenColor || "black"} ></Typography>
         </Box>
     )
 }

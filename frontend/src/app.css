@@ -16,3 +16,7 @@
     background: rgba(255, 255, 255, 0.425);
     backdrop-filter: blur(10px);
 }
+
+.item{
+    border: 1px solid #0092de;
+}

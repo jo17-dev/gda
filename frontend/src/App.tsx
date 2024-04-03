@@ -6,7 +6,7 @@ import { FaGithub } from "react-icons/fa6";
 import "./app.css";
 
 function App(props:any) {
-  const [theme, setTheme] = useState(props.theme)
+  const [theme, setTheme] = useState(props.theme);
   return (
     <>
     <Box bgcolor={theme.colors.background} textAlign="center">
@@ -32,9 +32,50 @@ function App(props:any) {
       <Box className="waves-container">
       </Box>
     </Box>
+    {/* Functionnalities section */}
     <Box textAlign="center" marginTop={4}>
       <Title content="What does GDA offer ?" hyphenSize={4} hyphenColor={theme.colors.body} />
+      <Box display="flex" flexDirection="column" paddingInline={4} justifyContent="space-around" marginTop={8}>
+        {/* Conversions section */}
+        <Box width="45%" height="200px" border={"1px solid "+theme.colors.body}  borderRadius="4px">
+          <Typography variant='h6' >Convertion of integers and Fractionnals numbers</Typography>
+          <Box display="flex" flexDirection="row" justifyContent="space-between" alignItems="center">
+            <Box width="fit-content" paddingLeft={8} height="150px" display="flex" textAlign="right" flexDirection="column" justifyContent="space-around">
+              <Typography>Integer numbers</Typography>
+              <Typography>Fractionnal numbers</Typography>
+            </Box>
+            <Logo width="80px" height="50px" />
+            <Box width="fit-content" paddingRight={8} height="150px" display="flex" textAlign="left" flexDirection="column" justifyContent="space-around">
+              <Typography>Binary</Typography>
+              <Typography>Octal</Typography>
+              <Typography>Decimal</Typography>
+              <Typography>Hexa-Decimal</Typography>
+            </Box>
+          </Box>
+        </Box>
+        {/* Operations section */}
+        <Box width="45%" height="200px" marginLeft="auto" border={"1px solid "+theme.colors.body} borderRadius="4px">
+          <Typography variant='h6' >Operations on any range of numbers</Typography>
+          <Box display="flex" flexDirection="row" justifyContent="space-between" alignItems="center">
+            <Box width="fit-content" paddingLeft={8} height="150px" display="flex" textAlign="right" flexDirection="column" justifyContent="space-around">
+              <Typography>Integer numbers</Typography>
+              <Typography>Fractionnal numbers</Typography>
+            </Box>
+            <Logo width="80px" height="50px" />
+            <Box width="fit-content" paddingRight={8} height="150px" display="flex" textAlign="left" flexDirection="column" justifyContent="space-around">
+              <Typography>Addition</Typography>
+              <Typography>Substraction</Typography>
+              <Typography>Multiplication</Typography>
+              <Typography>Division</Typography>
+            </Box>
+          </Box>
+        </Box>
+      </Box>
     </Box>
+
+    {/* how does GDA works  */}
+    <Title content="How does GDA work ?" colocontentColor="red" hyphenSize="4" hyphenColor={theme.colors.body} marginTop={6} />
+
     </>
   )
 }
