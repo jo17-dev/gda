@@ -4,6 +4,7 @@
             "text": "#273036",
             "body": "#0092de",
             "body2": "#60c0b3",
+            "skybody": "#0090de5d",
             "background": "white"
         },
         "button":{

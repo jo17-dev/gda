@@ -57,7 +57,7 @@ const mainJob = (req, res)=>{
         case 4: // Division
             result = areNumbersCorrect ? Operation.division(convertedDatas) : null;
             break;
-        case 6:
+        case 5:
             console.log("Conversion");
             if(req.body.startBase == req.body.endBase){
                 result = req.body.datas;
