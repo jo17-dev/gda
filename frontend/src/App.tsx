@@ -5,6 +5,7 @@ import Title from "./components/Title";
 import { FaGithub } from "react-icons/fa6";
 import "./app.css";
 import EndpoinDisplayer from "./components/EndpointDisplayer";
+import LiveDemo from "./components/LiveDemo";
 
 function App(props:any) {
   const [theme, setTheme] = useState(props.theme);
@@ -148,6 +149,7 @@ function App(props:any) {
       <Typography marginTop={1} >GDA returns an JSON containing one entry: <strong> {"{result: newDatas}"} </strong></Typography>
       {/* Live testing */}
       <Typography variant="h6" marginTop={4} >Live Demo:</Typography>
+      <LiveDemo baseColor={theme.colors.body} />
     </Box>
     </>
   )
