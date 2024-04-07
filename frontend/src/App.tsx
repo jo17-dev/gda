@@ -1,4 +1,4 @@
-import { Typography, Box, TableContainer, TableHead, Table ,TableCell, TableBody, TableRow } from "@mui/material";
+import { Typography, Box, TableHead, Table ,TableCell, TableBody, TableRow } from "@mui/material";
 import { useState } from "react";
 import Logo from "./components/Logo";
 import Title from "./components/Title";
@@ -6,6 +6,7 @@ import { FaGithub } from "react-icons/fa6";
 import "./app.css";
 import EndpoinDisplayer from "./components/EndpointDisplayer";
 import LiveDemo from "./components/LiveDemo";
+import Form from "./components/Form";
 
 function App(props:any) {
   const [theme, setTheme] = useState(props.theme);
@@ -20,7 +21,7 @@ function App(props:any) {
         <Typography alignContent="center" width="fit-content" >
           Made by <a href="https://github.com/jo17-dev">@jo17-dev</a>
         </Typography>
-        <Logo with="90" height="90" />
+        <Logo className="h-20" />
         <Typography alignContent="center" width="fit-content" display="inline-block" >
           <a href="https://github.com/jo17-dev/gda"> 
             <FaGithub display="inline-block" color={theme.colors.body} style={{width: "30px", height: "30px"}}  />
@@ -46,7 +47,7 @@ function App(props:any) {
               <Typography>Integer numbers</Typography>
               <Typography>Fractionnal numbers</Typography>
             </Box>
-            <Logo width="80px" height="50px" />
+            <Logo className="h-14" />
             <Box width="fit-content" paddingRight={8} height="150px" display="flex" textAlign="left" flexDirection="column" justifyContent="space-around">
               <Typography>Binary</Typography>
               <Typography>Octal</Typography>
@@ -63,7 +64,7 @@ function App(props:any) {
               <Typography>Integer numbers</Typography>
               <Typography>Fractionnal numbers</Typography>
             </Box>
-            <Logo width="80px" height="50px" />
+            <Logo className="h-14" />
             <Box width="fit-content" paddingRight={8} height="150px" display="flex" textAlign="left" flexDirection="column" justifyContent="space-around">
               <Typography>Addition</Typography>
               <Typography>Substraction</Typography>
@@ -150,6 +151,21 @@ function App(props:any) {
       {/* Live testing */}
       <Typography variant="h6" marginTop={4} >Live Demo:</Typography>
       <LiveDemo baseColor={theme.colors.body} />
+    </Box>
+    {/* contact part  */}
+    <Box>
+      <Title content="You want me to tell you something ?" hypenWidth="65%"  hyphenColor={theme.colors.body} hyphenSize={4} marginTop={4} />
+      <Box display={"flex"} flexDirection={"row"} justifyContent={"space-around"} marginTop={4} >
+        <Form width="40%"/>
+        <Box width="40%" >
+          <Typography variant="h1" >
+            <Logo className="h-60" />
+            <Typography>
+              Politique de confidentialité:
+            </Typography>
+          </Typography>
+        </Box>
+      </Box>
     </Box>
     </>
   )

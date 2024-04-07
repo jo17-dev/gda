@@ -1,6 +1,6 @@
 const Logo = (props: any)=>{
     return(
-        <img src="src/assets/img/gda-logo.png" width={props.width} height={props.height} />
+        <img src="src/assets/img/gda-logo.png" className={props.className} />
     )
 }
 
