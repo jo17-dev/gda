@@ -1,9 +1,11 @@
 // const env = require('dotenv').config().parsed;
 const express = require('express');
+const bodyParser = require('body-parser');
 const app =  express();
 const port = 500;
 
 app.use(express.urlencoded({ extended: true }));
+app.use(bodyParser.json());
 
 app.use( (req, res, next)=>{
     res.setHeader('Access-Control-Allow-Origin', '*'); // à modifier par un truc
