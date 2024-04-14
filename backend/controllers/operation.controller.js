@@ -10,7 +10,7 @@ const chekingMiddleware = (req, res, next)=>{
     console.log("request body: > ", req.body);
     if(!Boolean(req.body.operation && req.body.startBase && req.body.endBase && req.body.datas)){
         res.json(
-            {result: "not accepted"}
+            {result: null}
         )
         // res.sendStatus(503);
     }else{
@@ -75,12 +75,10 @@ const mainJob = (req, res)=>{
 
     res.json(
         {
-            operation: req.body.operation,
-            resultat: result
+            result: result
         }
     );
 }
 
 module.exports.mainJob = mainJob;
 module.exports.chekingMiddleware = chekingMiddleware;
-// module.exports = router;
