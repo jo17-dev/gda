@@ -1,4 +1,4 @@
-import { Box, TextField, FormControl, InputLabel, Select, MenuItem, Typography } from "@mui/material";
+import { Box, TextField, FormControl, InputLabel, Select, MenuItem, Typography, Button } from "@mui/material";
 import { useState } from "react";
 
 const LiveDemo = (props:any)=>{
@@ -33,6 +33,7 @@ const LiveDemo = (props:any)=>{
             <TextField type="number" id="startBase" label="startBase" variant="outlined" value={startBase} onChange={handleChange}/>
             <TextField type="number" id="endBase" label="endBase" variant="outlined" value={endBase} onChange={handleChange}/>
             <TextField type="text" id="datas" label="datas" variant="outlined" value={datas} onChange={handleChange}/>
+            <Button variant="contained" sx={{textDecoration: 'none', paddingInline: 4}} >Test</Button>
             <Typography variant="h6" border={"1px solid"+(props.baseColor || "black")} width="150px" marginTop="auto" marginBottom={"auto"} padding={1} borderRadius={1} ><strong>result:</strong> </Typography>
         </Box>
     )

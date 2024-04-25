@@ -7,6 +7,7 @@ import "./app.css";
 import EndpoinDisplayer from "./components/EndpointDisplayer";
 import LiveDemo from "./components/LiveDemo";
 import Form from "./components/Form";
+import PrivacyPolicy from "./containers/PrivacyPolicy";
 
 function App(props:any) {
   const [theme, setTheme] = useState(props.theme);
@@ -158,12 +159,7 @@ function App(props:any) {
       <Box display={"flex"} flexDirection={"row"} justifyContent={"space-around"} marginTop={4} >
         <Form width="40%"/>
         <Box width="40%" >
-          <Typography variant="h1" >
-            <Logo className="h-60" />
-            <Typography>
-              Politique de confidentialité:
-            </Typography>
-          </Typography>
+          <PrivacyPolicy />
         </Box>
       </Box>
     </Box>
