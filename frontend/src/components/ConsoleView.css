@@ -1,0 +1,15 @@
+.main-container{
+    background-image: url("/src/assets/img/gda-logo.png");
+    background-repeat: no-repeat;
+    background-size: 30%;
+    background-position-x: center;
+    background-position-y: top;
+}
+
+.consoleBody{
+    background-color: #13141663;
+    backdrop-filter: blur(3px);
+}
+.consoleBody > *{
+    color: whitesmoke;
+}

@@ -20,7 +20,7 @@ function App(props:any) {
       {/* The logo line */}
       <Box display="flex" flexDirection="row" marginTop={8} justifyContent="space-around">
         <Typography alignContent="center" width="fit-content" >
-          Made by <a href="https://github.com/jo17-dev">@jo17-dev</a>
+          Made by <a href="https://github.com/jo17-dev"></a>
         </Typography>
         <Logo className="h-20" />
         <Typography alignContent="center" width="fit-content" display="inline-block" >
