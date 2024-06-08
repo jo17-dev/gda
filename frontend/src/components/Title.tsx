@@ -10,9 +10,10 @@ import { Typography, Box } from "@mui/material";
  */
 const Title = (props:any)=>{
     return(
-        <Box display="flex" flexDirection="row" alignItems="center" justifyContent="space-evenly" paddingLeft={5} marginTop={props.marginTop || "0"}>
+        <Box display="flex" flexDirection="row" alignItems="center" justifyContent="space-between" paddingLeft={5} paddingRight={5} marginTop={props.marginTop || "0"}>
+            <Typography height={props.hyphenSize+"px" || "4px"} width={props.hypenWidth || "38%"} bgcolor={props.hyphenColor || "black"} ></Typography>
             <Typography variant={props.contentVariant || "h5"} fontWeight="bolder" color={props.contentColor || undefined } > {props.content} </Typography>
-            <Typography height={props.hyphenSize+"px" || "4px"} width={props.hypenWidth || "79%"} bgcolor={props.hyphenColor || "black"} ></Typography>
+            <Typography height={props.hyphenSize+"px" || "4px"} width={props.hypenWidth || "38%"} bgcolor={props.hyphenColor || "black"} ></Typography>
         </Box>
     )
 }

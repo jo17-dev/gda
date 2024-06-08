@@ -20,14 +20,14 @@ function App(props:any) {
       {/* The logo line */}
       <Box display="flex" flexDirection="row" marginTop={8} justifyContent="space-around">
         <Typography alignContent="center" width="fit-content" >
-          Made by <a href="https://github.com/jo17-dev"></a>
+          Made by <a href="https://github.com/jo17-dev">@jo17-dev</a>
         </Typography>
         <Logo className="h-20" />
         <Typography alignContent="center" width="fit-content" display="inline-block" >
           <a href="https://github.com/jo17-dev/gda"> 
             <FaGithub display="inline-block" color={theme.colors.body} style={{width: "30px", height: "30px"}}  />
           </a>
-          </Typography>
+        </Typography>
       </Box>
       
       {/* Caption title */}
@@ -151,11 +151,11 @@ function App(props:any) {
       <Typography marginTop={1} >GDA returns an JSON containing one entry: <strong> {"{result: newDatas}"} </strong></Typography>
       {/* Live testing */}
       <Typography variant="h6" marginTop={4} >Live Demo:</Typography>
-      <LiveDemo baseColor={theme.colors.body} />
+      <LiveDemo baseColor={theme.colors.body} theme={theme} />
     </Box>
     {/* contact part  */}
     <Box>
-      <Title content="You want me to tell you something ?" hypenWidth="65%"  hyphenColor={theme.colors.body} hyphenSize={4} marginTop={4} />
+      <Title content="You want me to tell you something ?" hypenWidth="33%"  hyphenColor={theme.colors.body} hyphenSize={4} marginTop={4} />
       <Box display={"flex"} flexDirection={"row"} justifyContent={"space-around"} marginTop={4} >
         <Form width="40%"/>
         <Box width="40%" >

@@ -5,7 +5,7 @@ const PrivacyPolicy = (props: any)=>{
     return (
         <Typography variant="h1" >
         <Logo className="h-60" />
-        <Typography>
+        <Typography fontWeight={"bold"}>
           Politique de confidentialité:
         </Typography>
         <Typography>
@@ -16,7 +16,6 @@ const PrivacyPolicy = (props: any)=>{
           </Typography>
         <Typography>
         </Typography>
-          GDA ne divulgeras jamais volontairement les données que vous entrerez.
         </Typography>
       </Typography>
     )

@@ -19,7 +19,7 @@ const chekingMiddleware = (req, res, next)=>{
 }
 
 const mainJob = (req, res)=>{
-    let result, convertedDatas;
+    let result, convertedDatas, endStatus = 200;
     let operation = parseInt(req.body.operation);
     let areNumbersCorrect = true;
 
@@ -28,11 +28,13 @@ const mainJob = (req, res)=>{
     for(let i=0; i<numbers.length; i++){
         if(!Helper.isRealNumber(numbers[i])){
             areNumbersCorrect = false;
+            endStatus = 400;
             break;
         }
         if(! Helper.is_in_the_base(numbers[i], parseInt(req.body.startBase))){
             console.log("les bases ne corespoondent ")
             areNumbersCorrect = false;
+            endStatus = 400;
             break;
         }
     }
@@ -75,7 +77,8 @@ const mainJob = (req, res)=>{
 
     res.json(
         {
-            result: result
+            result: result,
+            status: endStatus
         }
     );
 }
