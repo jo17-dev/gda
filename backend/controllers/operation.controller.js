@@ -10,7 +10,10 @@ const chekingMiddleware = (req, res, next)=>{
     console.log("request body: > ", req.body);
     if(!Boolean(req.body.operation && req.body.startBase && req.body.endBase && req.body.datas)){
         res.json(
-            {result: null}
+            {
+                status: 400,
+                result: null
+            }
         )
         // res.sendStatus(503);
     }else{

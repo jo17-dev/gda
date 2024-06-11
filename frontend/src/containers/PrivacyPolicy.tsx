@@ -12,7 +12,7 @@ const PrivacyPolicy = (props: any)=>{
           Les lignes que vous lisez actuellement illustrent la façons dont GDA traite les données
           que vous entrez.
           <Typography>
-            Vous êtes autorisé à entrer des information érronés dans les différents formulaires.
+            Vous êtes autorisé à entrer des information érronés dans le(s) formulaire(s).
           </Typography>
         <Typography>
         </Typography>

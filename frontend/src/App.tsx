@@ -41,7 +41,7 @@ function App(props:any) {
       <Title content="What does GDA offer ?" hyphenSize={4} hyphenColor={theme.colors.body} />
       <Box display="flex" flexDirection="column" paddingInline={4} justifyContent="space-around" marginTop={8}>
         {/* Conversions section */}
-        <Box width="45%" border={"1px solid "+theme.colors.body}  borderRadius="4px">
+        <Box width="45%" border={"1px solid "+theme.colors.body}  borderRadius="4px" className="text-red-400" >
           <Typography variant='h6' >Convertion of integers and Fractionnals numbers</Typography>
           <Box display="flex" flexDirection="row" justifyContent="space-between" alignItems="center">
             <Box width="fit-content" paddingLeft={8} height="150px" display="flex" textAlign="right" flexDirection="column" justifyContent="space-around">
@@ -148,7 +148,7 @@ function App(props:any) {
         </Table>
       </Box>
       <Typography variant="h6" marginTop={4} >Returns Object(JSON):</Typography>
-      <Typography marginTop={1} >GDA returns an JSON containing one entry: <strong> {"{result: newDatas}"} </strong></Typography>
+      <Typography marginTop={1} >GDA returns an JSON containing those entries: <strong> {"{statut: 200 , result: [data1, data2]}"} </strong></Typography>
       {/* Live testing */}
       <Typography variant="h6" marginTop={4} >Live Demo:</Typography>
       <LiveDemo baseColor={theme.colors.body} theme={theme} />

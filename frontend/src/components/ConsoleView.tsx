@@ -29,7 +29,7 @@ const ConsoleView =(props: any)=>{
                     <Typography>
                     C:\Users\forYou\Tests\Not\Carried\Out {'>'}
                     </Typography>
-                    <Typography display={"flex"} flexDirection={"row"}>
+                    <Typography display={"flex"} flexDirection={"row"} flexWrap={"wrap"}>
                         <Typography color={"white"} >
                             C:\Users\forYou\Tests\Not\Carried\Out{'>'}
                         </Typography>
