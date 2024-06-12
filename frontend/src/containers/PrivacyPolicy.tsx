@@ -1,7 +1,7 @@
 import { Typography } from "@mui/material";
 import Logo from "../components/Logo";
 
-const PrivacyPolicy = (props: any)=>{
+const PrivacyPolicy = ()=>{
     return (
         <Typography variant="h1" >
         <Logo className="h-60" />

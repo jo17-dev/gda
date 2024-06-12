@@ -13,8 +13,8 @@ const EndpoinDisplayer =(props:any)=>{
         paddingLeft={.8}
         borderRadius={1}
          >
-            <Typography border={"1px solid "+color} borderRadius={1} bgcolor={props.urlBgcolor} paddingInline={1}>METHOD: <strong>GET</strong></Typography>
-            <Typography marginLeft={4} fontSize="1.3rem" marginTop="auto" marginBottom="auto" fontWeight="bolder" color={props.baseColor} >URI: https://localhost:500/  </Typography>
+            <Typography border={"1px solid "+color} borderRadius={1} bgcolor={props.urlBgcolor} paddingInline={1}>METHOD: <strong>PATCH</strong></Typography>
+            <Typography marginLeft={4} fontSize="1.3rem" marginTop="auto" marginBottom="auto" fontWeight="bolder" color={props.baseColor} >URI: https://gda-api.onrender.com  </Typography>
         </Box>
     )
 }

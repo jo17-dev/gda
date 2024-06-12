@@ -1,4 +1,4 @@
-import { Typography, Box, TableHead, Table ,TableCell, TableBody, TableRow } from "@mui/material";
+import { Link, Typography, Box, TableHead, Table ,TableCell, TableBody, TableRow } from "@mui/material";
 import { useState } from "react";
 import Logo from "./components/Logo";
 import Title from "./components/Title";
@@ -20,13 +20,15 @@ function App(props:any) {
       {/* The logo line */}
       <Box display="flex" flexDirection="row" marginTop={8} justifyContent="space-around">
         <Typography alignContent="center" width="fit-content" >
-          Made by <a href="https://github.com/jo17-dev">@jo17-dev</a>
+          Made by <Link color={theme.colors.text} href="https://github.com/jo17-dev">@jo17-dev</Link>
         </Typography>
         <Logo className="h-20" />
         <Typography alignContent="center" width="fit-content" display="inline-block" >
-          <a href="https://github.com/jo17-dev/gda"> 
-            <FaGithub display="inline-block" color={theme.colors.body} style={{width: "30px", height: "30px"}}  />
-          </a>
+          {/* <a href="https://github.com/jo17-dev/gda"> */}
+            <Link href="https://github.com/jo17-dev/gda">
+              <FaGithub display="inline-block" color={theme.colors.body} style={{width: "30px", height: "30px"}}  />
+            </Link>
+          {/* </a> */}
         </Typography>
       </Box>
       
@@ -126,7 +128,7 @@ function App(props:any) {
           <TableBody>
             <TableRow>
               <TableCell>operation</TableCell>
-              <TableCell> {"{String || number}"} (1, 2, 3, 4, 5, 6) </TableCell>
+              <TableCell> {"{String || number}"} (1, 2, 3, 4, 5) </TableCell>
               <TableCell>Denote the type of the operation: (1=addition, 2=substraction, 3=Multiplication, 4=division, 5=conversion )</TableCell>
           </TableRow>
             <TableRow>
@@ -141,14 +143,14 @@ function App(props:any) {
           </TableRow>
             <TableRow>
               <TableCell>datas</TableCell>
-              <TableCell> {"{String || number}"} </TableCell>
+              <TableCell> {"String"} </TableCell>
               <TableCell>Denotes your datas. the fractionnal one should have "." instead "," and each number should be separate by a ";"</TableCell>
           </TableRow>
           </TableBody>
         </Table>
       </Box>
       <Typography variant="h6" marginTop={4} >Returns Object(JSON):</Typography>
-      <Typography marginTop={1} >GDA returns an JSON containing those entries: <strong> {"{statut: 200 , result: [data1, data2]}"} </strong></Typography>
+      <Typography marginTop={1} >GDA returns an JSON containing those entries: <strong> {"{result: [data1, data2], statut: 200}"} </strong></Typography>
       {/* Live testing */}
       <Typography variant="h6" marginTop={4} >Live Demo:</Typography>
       <LiveDemo baseColor={theme.colors.body} theme={theme} />
