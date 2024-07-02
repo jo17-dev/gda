@@ -1,5 +1,6 @@
 {
     "sky":{
+        "themeName": "sky",
         "colors":{
             "text": "#273036",
             "body": "#0092de",
@@ -11,6 +12,21 @@
             "colors": "white",
             "background": "#0092de",
             "outline": "#0092de"
+        }
+    },
+    "dark":{
+        "themeName": "dark",
+        "colors":{
+            "text": "#e6e6e6",
+            "body": "#0092de",
+            "body2": "#60c0b3",
+            "skybody": "#33ff33",
+            "background": "#18191b"
+        },
+        "button":{
+            "colors": "yellow",
+            "background": "grey",
+            "outline": "blue"
         }
     }
 }

@@ -1,5 +1,5 @@
 import { Typography } from "@mui/material";
-import Logo from "../components/Logo";
+import Logo from "../containers/Logo";
 
 const PrivacyPolicy = ()=>{
     return (

@@ -1,6 +1,6 @@
 import { Box, TextField, Button, Typography } from "@mui/material";
 import { useState } from "react";
-import ConsoleView from "./ConsoleView";
+import ConsoleView from "../containers/ConsoleView";
 
 const LiveDemo = (props:any)=>{
     const [startBase, setStartBase] = useState(10);

@@ -6,6 +6,7 @@ import { Typography, Box } from "@mui/material";
  * @param {string} props.hyphenSize
  * @param {string} props.hyphenColor
  * @param {string || int} props.marginTop
+ * @param {string} props.contentColor
  * @returns {}
  */
 const Title = (props:any)=>{
