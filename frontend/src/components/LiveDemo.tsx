@@ -8,7 +8,7 @@ const LiveDemo = (props:any)=>{
     const [operation, setOperation] = useState(5);
     const [datas, setDatas] = useState(6);
     const [result, setResult] = useState("Result: ");
-    const serverUrl = "http://localhost:500/";
+    const serverUrl = props.serverUrl || "http://localhost:500/";
 
     const handleChange = (e:any)=>{
         switch (e.target.id){
@@ -66,9 +66,9 @@ const LiveDemo = (props:any)=>{
 
     return (
         <>
-        <Box>
+        {/* <Box>
             <ConsoleView title="cmd.exe - curl" method="PATCH" serverurl={serverUrl} theme={props.theme} />
-        </Box>
+        </Box> */}
         <Box display={"flex"} flexDirection={"row"} justifyContent="space-around" flexWrap={"wrap"} >
             <TextField type="number" id="operation" label="operation" variant="outlined" value={operation} onChange={handleChange} />
             <TextField type="number" id="startBase" label="startBase" variant="outlined" value={startBase} onChange={handleChange}/>

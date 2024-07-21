@@ -1,4 +1,4 @@
-import { TextField, Box, Button } from "@mui/material";
+import { TextField, Box, Button, InputLabel } from "@mui/material";
 import { TextareaAutosize } from '@mui/base/TextareaAutosize';
 import { LuSendHorizonal } from "react-icons/lu";
 import { useState } from "react";
@@ -23,23 +23,19 @@ const Form = (props:any)=>{
     return(
         <Box width={props?.width} marginTop={props?.marginTop} >
             <form method="post" >
-                <TextField required={true} label="Pseudo" variant="outlined" className="border border-slate-400" value={pseudo} onChange={handlePseudoChange} fullWidth margin="normal" />
-                {/* <textarea 
-                    required={true}
-                    className={"border border-gray-400 w-full h-20 rounded  focus:outline-blue-600"} 
-                    placeholder="Ask me a question" value={message} onChange={handleMessageChange} >
-                </textarea> */}
+                <InputLabel required={true} label="Pseudo" variant="outlined" value={pseudo} onChange={handlePseudoChange} fullWidth margin="normal" />
                 <TextareaAutosize
+                    style={{backgroundColor: 'transparent', outline: '1px solid '+ '#e6e6e6' }}
                     required={true}
                     placeholder="Here you go !"
                     minRows={3}
-                    className="border border-slate-400 w-full rounded"
+                    className="w-full rounded"
                     value={message}
                     onChange={handleMessageChange}
                 >
                 </TextareaAutosize>
                 <div className="ml-auto w-fit">
-                    <Button variant="contained" endIcon={<LuSendHorizonal stroke={"white"} />} sx={{textTransform: 'none'}} >Send </Button>
+                    <Button variant="contained" endIcon={<LuSendHorizonal stroke={'white'} />} sx={{textTransform: 'none'}} >Send </Button>
                 </div>
             </form>
         </Box>
